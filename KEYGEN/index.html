@@ -8,18 +8,37 @@
 </head>
 <body>
   <main class="card">
-    <h1>KEYGEN для Sec Lab 3</h1>
+    <h1>KEYGEN для Sec Lab 4</h1>
     <p>Генератор складних ліцензійних ключів для розблокування веб-застосунку.</p>
 
-    <div class="actions">
-      <button id="generateBtn">Згенерувати ключ</button>
-      <button id="copyBtn">Копіювати ключ</button>
-    </div>
+    <section class="captcha-section">
+      <h3>Перевірка людини</h3>
+      <p>Розпізніть текст на зображенні:</p>
+      <div class="captcha-container">
+        <canvas id="captchaCanvas" width="300" height="120"></canvas>
+        <button id="refreshCaptchaBtn" type="button">Оновити</button>
+      </div>
+      <input 
+        id="captchaInput" 
+        type="text" 
+        placeholder="Введіть текст з зображення"
+        maxlength="8">
+      <button id="verifyCaptchaBtn" type="button">Перевірити</button>
+      <p id="captchaStatus"></p>
+    </section>
 
-    <label for="keyOutput">Ліцензійний ключ:</label>
-    <input id="keyOutput" type="text" readonly placeholder="Натисніть 'Згенерувати ключ'">
+    <section class="keygenSection" style="display: none;" id="keygenSection">
+      <h3>Генерація ключа</h3>
+      <div class="actions">
+        <button id="generateBtn">Згенерувати ключ</button>
+        <button id="copyBtn">Копіювати ключ</button>
+      </div>
 
-    <p id="info"></p>
+      <label for="keyOutput">Ліцензійний ключ:</label>
+      <input id="keyOutput" type="text" readonly placeholder="Натисніть 'Згенерувати ключ'">
+
+      <p id="info"></p>
+    </section>
   </main>
 
   <script src="keygen.js"></script>
